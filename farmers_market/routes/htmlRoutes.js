@@ -3,19 +3,19 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Farmersmarket.findAll({}).then(function(dbFarmersmarkets) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        Farmersmarkets: dbFarmersmarkets
       });
     });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
+  // Load Farmersmarket page and pass in an Farmersmarket by id
+  app.get("/Farmersmarket/:id", function(req, res) {
+    db.Farmersmarket.findOne({ where: { id: req.params.id } }).then(function(dbFarmersmarket) {
+      res.render("Farmersmarket", {
+        Farmersmarket: dbFarmersmarket
       });
     });
   });
