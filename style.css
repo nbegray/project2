@@ -1,0 +1,27 @@
+.text-center {
+    font-family: 'Rye', cursive;
+    font-size: 70px;
+}
+
+body {
+    background: url("https://images-na.ssl-images-amazon.com/images/I/51Nr2wNGPIL._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.card-header {
+    background-color: #1ae26d;
+    color: white;
+    font-weight: bold;
+}
+
+.form-group {
+    color: black;
+    font-weight: bold;
+}
+
+.footer {
+    border-top: 2px solid rgb(94, 94, 94);
+}
