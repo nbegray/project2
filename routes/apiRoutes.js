@@ -19,14 +19,14 @@ module.exports = function (app) {
     });
   });
 
-  // Create a new example
-  app.post("/api/farmersmarket", function (req, res) {
-    db.Farmersmarket.create(req.body).then(function (dbFarmersmarket) {
-      res.json(dbFarmersmarket);
-    });
-  });
+  // // Create a new example
+  // app.post("/api/farmersmarket", function (req, res) {
+  //   db.Farmersmarket.create(req.body).then(function (dbFarmersmarket) {
+  //     res.json(dbFarmersmarket);
+  //   });
+  // });
 
-  // Delete an example by id
+  // // Delete an example by id
   // app.delete("/api/farmersmarket/:id", function(req, res) {
   //   db.farmersmarket.destroy({ where: { id: req.params.id } }).then(function(dbFarmersmarket) {
   //     res.json(dbFarmersmarket);
