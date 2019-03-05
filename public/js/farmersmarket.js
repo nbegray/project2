@@ -16,11 +16,11 @@ $(function() {
             state: state,
             website: website,
 
-          };
+        };
 
         $("#findMarket").on("click", function () {
 
-            var zip= $("#zipCode").val().trim();
+            var zip = $("#zipCode").val().trim();
             getResults(zip);
         });
         function getResults(zip) {
