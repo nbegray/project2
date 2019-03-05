@@ -1,6 +1,8 @@
-require("dotenv").config();
+// require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
+var apiRoutes = require("./routes/apiRoutes");
+var htmlRoutes = require("./routes/htmlRoutes");
 
 var db = require("./models");
 
@@ -19,14 +21,10 @@ app.engine(
     defaultLayout: "main"
   })
 );
-app.set("view engine", "handlebars");
-app.get("/", (req, res) => {
-  res.send("Hello World!")
-})
 
 // // Routes
-// require("./routes/apiRoutes")(app);
-// require("./routes/htmlRoutes")(app);
+app.use(apiRoutes);
+app.use(htmlRoutes);
 
 var syncOptions = { force: false };
 
@@ -37,7 +35,7 @@ if (process.env.NODE_ENV === "test") {
 }
 
 // Starting the server, syncing our models ------------------------------------/
-// db.sequelize.sync(syncOptions).then(function() {
+db.sequelize.sync(syncOptions).then(function() {
   app.listen(PORT, function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
@@ -45,12 +43,6 @@ if (process.env.NODE_ENV === "test") {
       PORT
     );
   });
-// });
-
-
-
-
-
-
+});
 
 module.exports = app;
