@@ -14,14 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-<<<<<<< HEAD
-    "use_env_variable": "mysql://kuhfqb2mlow7gs5z:c5ie2l8vte8f8jvh@thh2lzgakldp794r.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/v1yfhkfp1g292gmh",
-=======
     "username": "root",
     "password": null,
     "database": "database_test",
     "host": "127.0.0.1",
->>>>>>> 39c217fd00b230cd50172aca9fde862bdfc2fe49
     "dialect": "mysql"
   }
 } 
