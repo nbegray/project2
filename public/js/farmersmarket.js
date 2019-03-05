@@ -12,6 +12,8 @@ function getResults(zip) {
         jsonpCallback: 'searchResultsHandler'
     });
 }
+
+
 //iterate through the JSON result object.
 function searchResultsHandler(searchresults) {
     for (var key in searchresults) {
