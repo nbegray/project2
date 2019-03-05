@@ -14,7 +14,8 @@ var sequelize = new Sequelize("farmersmarket_db", "root", "root", {
     max: 5,
     min: 0,
     idle: 10000
-  }
+  },
+  operatorsAliases : false
 });
 
 // Exports the connection for other files to use

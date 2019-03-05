@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function () {
     $(".location-splash").on("click", function (event) {
         event.preventDefault();
 
@@ -14,11 +14,11 @@ $(function() {
             state: state,
             website: website,
 
-          };
+        };
 
         $("#findMarket").on("click", function () {
 
-            var zip= $("#zipCode").val().trim();
+            var zip = $("#zipCode").val().trim();
             getResults(zip);
         })
         function getResults(zip) {
@@ -35,17 +35,17 @@ $(function() {
                 jsonpCallback: 'searchResultshandler',
                 data: farmersMarketdata,
 
-                
+
 
             }).then(
-                function() {
-                  console.log("data retrieved", farmersMarketdata);
-                  searchResultsHandler()
-                  // Reload the page to get the updated list
-                  window.location.pathname = "/";
+                function () {
+                    console.log("data retrieved", farmersMarketdata);
+                    searchResultsHandler()
+                    // Reload the page to get the updated list
+                    window.location.pathname = "/";
                 }
-              );
-              function searchResultsHandler(farmersMarketdata) {
+            );
+            function searchResultsHandler(farmersMarketdata) {
                 for (var key in farmersMarketdata) {
                     alert(key);
                     var results = farmersMarketdata[key];
@@ -61,4 +61,5 @@ $(function() {
                 }
             }
         }
-    }
+    })
+})
