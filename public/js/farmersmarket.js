@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 $(function () {
+=======
+$(document.ready, function (){
+$(function() {
+>>>>>>> 39c217fd00b230cd50172aca9fde862bdfc2fe49
     $(".location-splash").on("click", function (event) {
         event.preventDefault();
 
@@ -7,6 +12,7 @@ $(function () {
         var city = $(this).data("city");
         var state = $(this).data("state");
         var website = $(this).data("website");
+
         var farmersMarketdata = {
             info: info,
             marketName: marketName,
@@ -20,7 +26,7 @@ $(function () {
 
             var zip = $("#zipCode").val().trim();
             getResults(zip);
-        })
+        });
         function getResults(zip) {
             // or
             // function getResults(lat, lng) {
