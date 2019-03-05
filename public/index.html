@@ -33,45 +33,39 @@
         <h1 class="text-center">Farmers Market Finder</h1>
     </div>
 
-    <div class="search-body">
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-header">
-                    City
-                </div>
-                <div class="card-body">
-                    <input type="text" id="city-search" class="form-control">
-                    <br>
-                    <div class="text-right">
-                        <button class="btn btn-primary btn-md" id="search-btn">
-                            <span class="fa fa-search"></span> Search</button>
+    <div class="row"></div>
+    <br>
+
+    <div class="row"></div>
+    <div class="col-lg-12">
+        <!-- Add Farmers Market  -->
+        <div class="columns">
+            <div class="column"></div>
+            <div class="column">
+
+
+                <div class="add-card">
+                    <div class="card-header">
+                        <h3>Search for a market near you</h3>
                     </div>
-                </div>
-                <div class="card-header">
-                    State
-                </div>
-                <div class="card-body">
-                    <input type="text" id="state-search" class="form-control">
-                    <br>
-                    <div class="text-right">
-                        <button class="btn btn-primary btn-md" id="search-btn">
-                            <span class="fa fa-search"></span> Search</button>
-                    </div>
-                </div>
-                <div class="card-header">
-                    Zip Code
-                </div>
-                <div class="card-body">
-                    <input type="text" id="zip-search" class="form-control">
-                    <br>
-                    <div class="text-right">
-                        <button class="btn btn-primary btn-md" id="search-btn">
-                            <span class="fa fa-search"></span> Search</button>
+                    <div class="card-body">
+                        <!-- Entry Form -->
+                        <form>
+                            
+                            <div class="form-group">
+                                <label for="zipcode-input">Zip Code</label>
+                                <input class="form-control" id="zipcode-input" type="text">
+                            </div>
+                            <button class="btn btn-success float-middle" id="search-btn">Search</button>
+                        </form>
                     </div>
                 </div>
             </div>
+            <div class="column"></div>
         </div>
     </div>
+</div>
+</div>
     <!-- <div class="search-center">
                         <button type="search" class="btn btn-success float-middle" id="search-btn"><span
                                 class="fa fa-search"></span> Search</button>

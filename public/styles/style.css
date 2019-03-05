@@ -95,11 +95,16 @@ h3 {
     text-align: center;
 }
 
-.card mb-4{
-max-width: 50px;
-align-content: center;
 
+
+.search-body {
+    font-size: 20px;
+    /* margin: auto; */
+    color: black;
+    font-family: 'Rye', cursive;
+    /* text-shadow: 2px 2px black; */
 }
+
 
 
 
