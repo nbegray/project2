@@ -18,11 +18,11 @@ $(function() {
 
         };
 
-        $("#findMarket").on("click", function () {
+        
 
             var zip = $("#zipCode").val().trim();
             getResults(zip);
-        });
+        
         function getResults(zip) {
             // or
             // function getResults(lat, lng) {
