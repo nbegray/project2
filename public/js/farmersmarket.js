@@ -1,16 +1,16 @@
 $(document.ready, function (){
 $(function() {
-    $(".location-splash").on("click", function (event) {
+    $("#search-btn").on("click", function (event) {
         event.preventDefault();
 
-        var info = $(this).data("info");
+        var id = $(this).data("id");
         var marketName = $(this).data("marketName");
         var city = $(this).data("city");
         var state = $(this).data("state");
         var website = $(this).data("website");
 
         var farmersMarketdata = {
-            info: info,
+            id: id,
             marketName: marketName,
             city: city,
             state: state,
