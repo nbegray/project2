@@ -27,9 +27,9 @@ module.exports = function (app) {
   });
 
   // Delete an example by id
-  app.delete("/api/farmersmarket/:id", function(req, res) {
-    db.farmersmarket.destroy({ where: { id: req.params.id } }).then(function(dbFarmersmarket) {
-      res.json(dbFarmersmarket);
-    });
-  });
+  // app.delete("/api/farmersmarket/:id", function(req, res) {
+  //   db.farmersmarket.destroy({ where: { id: req.params.id } }).then(function(dbFarmersmarket) {
+  //     res.json(dbFarmersmarket);
+  //   });
+  // });
 };
