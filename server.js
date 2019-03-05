@@ -1,11 +1,13 @@
-require("dotenv").config();
+// require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
+var apiRoutes = require("./routes/apiRoutes");
+var htmlRoutes = require("./routes/htmlRoutes");
 
 var db = require("./models");
 
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 8080;
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -19,11 +21,10 @@ app.engine(
     defaultLayout: "main"
   })
 );
-app.set("view engine", "handlebars");
 
-// Routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+// // Routes
+app.use(apiRoutes);
+app.use(htmlRoutes);
 
 var syncOptions = { force: false };
 

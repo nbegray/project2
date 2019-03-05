@@ -2,20 +2,26 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "farmersmarket_db",
-    "host": "localhost",
+    "database": "project_2",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "root",
-    "database": "testdb",
-    "host": "localhost",
-    "dialect": "mysql",
-    "logging": false
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": "JAWSDB_URL",
+<<<<<<< HEAD
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+=======
+    "use_env_variable": "mysql://kuhfqb2mlow7gs5z:c5ie2l8vte8f8jvh@thh2lzgakldp794r.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/v1yfhkfp1g292gmh",
+>>>>>>> bac59c45e5fab81172d0661652b4d02162ec22ab
     "dialect": "mysql"
   }
 }
