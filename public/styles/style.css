@@ -1,10 +1,12 @@
 .text-center {
     font-family: 'Rye', cursive;
-    font-size: 70px;
+    font-size: 100px;
+    background-color: #8a8a8a70;
+    color: white;
 }
 
 body {
-    background: url("https://images-na.ssl-images-amazon.com/images/I/51Nr2wNGPIL._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_.jpg") no-repeat center center fixed;
+    background: url("https://foodrevolution.org/wp-content/uploads/2017/12/blog-featured-buy_local_4-20171220-1400.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -12,21 +14,37 @@ body {
 }
 
 .card-header {
-    background-color: #1ae26d;
-    color: white;
+    background-color: peachpuff;
+    color: black;
+    font-weight: bold;
+    font-family: 'Rye', cursive;
+}
+
+#market-info {
+    font-family: 'Rye', cursive;
     font-weight: bold;
 }
 
 .form-group {
-    color: black;
+    font-family: 'Rye', cursive;
     font-weight: bold;
+}
+
+#add-btn {
+    font-family: 'Rye', cursive;
 }
 
 .footer {
     border-top: 2px solid rgb(94, 94, 94);
+    max-height: 2px;
+    font-family: 'Rye', cursive;
 }
 
 
 
 
-/* Start http://www.cursors-4u.com */ * {cursor: url(http://cur.cursors-4u.net/food/foo-5/foo430.cur), auto !important;} /* End http://www.cursors-4u.com */
+
+
+
+
+ /* Start http://www.cursors-4u.com */ * {cursor: url(http://cur.cursors-4u.net/food/foo-5/foo430.cur), auto !important;} /* End http://www.cursors-4u.com */
