@@ -1,3 +1,4 @@
+$(document.ready, function (){
 $(function() {
     $(".location-splash").on("click", function (event) {
         event.preventDefault();
@@ -7,6 +8,7 @@ $(function() {
         var city = $(this).data("city");
         var state = $(this).data("state");
         var website = $(this).data("website");
+
         var farmersMarketdata = {
             info: info,
             marketName: marketName,
@@ -20,7 +22,7 @@ $(function() {
 
             var zip= $("#zipCode").val().trim();
             getResults(zip);
-        })
+        });
         function getResults(zip) {
             // or
             // function getResults(lat, lng) {
@@ -35,7 +37,7 @@ $(function() {
                 jsonpCallback: 'searchResultshandler',
                 data: farmersMarketdata,
 
-                
+            
 
             }).then(
                 function() {
@@ -43,22 +45,23 @@ $(function() {
                   searchResultsHandler()
                   // Reload the page to get the updated list
                   window.location.pathname = "/";
-                }
-              );
-              function searchResultsHandler(farmersMarketdata) {
-                for (var key in farmersMarketdata) {
-                    alert(key);
-                    var results = farmersMarketdata[key];
-                    for (var i = 0; i < results.length; i++) {
-                        var result = results[i];
-                        for (var key in result) {
-                            //only do an alert on the first search result
-                            if (i == 0) {
-                                alert(result[key]);
+                })
+            };
+                function searchResultsHandler(farmersMarketdata) {
+                    for (var key in farmersMarketdata) {
+                        alert(key);
+                        var results = farmersMarketdata[key];
+                        for (var i = 0; i < results.length; i++) {
+                            var result = results[i];
+                            for (var key in result) {
+                                //only do an alert on the first search result
+                                if (i == 0) {
+                                    alert(result[key]);
+                                }
                             }
                         }
                     }
                 }
-            }
-        }
-    }
+            })
+        });
+    });
