@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "farmersmarket_db",
+    "database": "farmersMarketDB",
     "host": "localhost",
     "dialect": "mysql"
   },
