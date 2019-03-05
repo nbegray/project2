@@ -1,3 +1,12 @@
+$(function() {
+    $(".location-splash").on("click", function(event) {
+      var marketName = $(this).data("name");
+      var  = $(this).data("");
+  
+      var newSleepState = {
+        sleepy: newSleep
+      };
+
 function getResults(zip) {
     // or
     // function getResults(lat, lng) {
