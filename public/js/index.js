@@ -36,6 +36,27 @@ Object.keys(db).forEach(function(modelName) {
   }
 });
 
+// When user hits the zipcode search-btn
+$("#search-btn").on("click", function() {
+
+  // Save the zipcode they typed into the author-search input
+  var zipcodeSearched = $("#zipcode-input").val().trim();
+
+  // Make an AJAX get request to our api, including the user's zipcode in the url
+  $.get("/api/zipcode/" + zipcodeSearched, function(data) {
+
+    // Log the data to the console
+    console.log(data);
+   
+
+  });
+
+});
+
+
+
+
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
