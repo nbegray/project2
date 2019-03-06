@@ -6,7 +6,7 @@
 var Sequelize = require("sequelize");
 
 // Creates mySQL connection using Sequelize, the empty string in the third argument spot is our password.
-var sequelize = new Sequelize("farmersmarket_db", "root", "root", {
+var sequelize = new Sequelize("farmermarket_db", "root", "root", {
   host: "localhost",
   port: 3306,
   dialect: "mysql",
