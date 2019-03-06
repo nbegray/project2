@@ -78,9 +78,17 @@
     splash.html->index.html
     index.html->search.html
     add.html->recommendations.html
+    renamed js files to match their .html files
     modified route import in server.js
     deleted handlebars folder (from starter file)
     deleted test & migrations folders (not needed)
     cleaned the .html files
     copied table to the recommendations page
     removed search fields from recommendations page
+    changed .eslint settings
+    cleaned js code
+    removed unneeded packages from package.json
+    combined farmersmarket.js and search.js (formerly add.js)
+    fixed <a href>'s
+    matched selectors
+    removed the window.location from the .js files after API call (need to render the results to screen)
