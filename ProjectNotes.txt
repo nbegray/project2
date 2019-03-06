@@ -1,0 +1,138 @@
+----------------------------------------------------------------------------------------------------------------------------------
+---------------Notes on changes made and tips on how to avoid getting stuck when working with a team------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+
+    FRONT-END vs. BACK-END
+
+    FRONT- this team is responsible for "public" folder
+
+        FILES:
+        .html files
+        .css files
+        .js files that control behavior on .html files
+
+        BEHAVIOR/RESPONSIBILITIES:
+        appearance
+        buttons and clicks
+        images
+        general information
+        "ajax" calls
+        displaying data return from server/database
+        _maybe_ some API calls
+
+        COMMUNICATION W/ BACK-END:
+        get the routes/endpoints for the "ajax" calls (back-end chooses the routes, front end matches their ajax calls to the routes)
+                EX: "/api/markets", "/customer/purchases", etc.
+        data format (talk with back-end/database person about how they want the data sent with the "ajax" calls. Structure the data how
+                    its going to be stored in the database to avoid confusion.)
+                EX: data = {
+                    name: "testing",
+                    location: "chandler"
+                    }
+
+    BACK- this team is responsible for the server, router, database, models and (often) API calls
+
+        FILES/FOLDERS:
+        models/
+        routes/
+        config/
+        server.js
+
+        BEHAVIOR/RESPONSIBILITIES:
+        maintaining file structure
+        configuring the database
+        querying the database 
+        creating the routes and delivering data to the front end IN RESPONSE TO "ajax" calls
+        storing data in the database
+        serving/rendering the .html files to the browser
+        API calls* (depending on how the application works, data may first be delivered to the server, then stored in the db, THEN sent to the browser)
+
+        COMMUNICATION W/ FRONT-END:
+        you set the routes and tell the front end what they are
+        you set the format of the data for the database, so tell the front end how they should sent it to you
+
+    GENERAL tips
+
+    make sure the naming of the files and variables explains what they do, so others can easily understand whats going on
+        -if you need more room, leave comments for your team.
+    get the server up and running early. It makes testing for both halves much easier.
+    as a team decide early what data you want to have, how it will be displayed, how it will be stored and make sure you have a written statement of your application
+        so everyone can look at it while they are working, if they need a refresher
+    if you write the .html, write the event listeners. This is very important
+    leave detailed styling until the end. Make sure everything works and data is displaying correctly before fine-tuning the appearance
+    communicate what files you're working on and STICK TO THOSE FILES. Make sure two people NEVER work on the same file on different computers
+        -if two people need to work on the same issue, one person should code and the other should watch and talk the other through it.
+        -commit those changes and merge when you complete work on a file, or better, section of a file. Then tell the group to pull and make sure your code works for all
+    ask for help. If you need information from the other team, don't guess. Make sure your routes match, your data matches, etc.
+
+
+    PROJECT OUTLINE
+
+    landing/index/splash page will ask if user wants to search for farmers markets, or view recommendations
+    search page send API calls, retrieves results, and displays for users
+        -each result has a button to "recommend" it to others. this saves that result to the db.
+    recommendations page calls to the server, which pulls data from the db and displays for user
+    BUILD A NAVBAR
+
+    CHANGES
+    splash.html->index.html
+    index.html->search.html
+    add.html->recommendations.html
+    renamed js files to match their .html files
+    modified route import in server.js
+    deleted handlebars folder (from starter file)
+    deleted test & migrations folders (not needed)
+    cleaned the .html files
+    copied table to the recommendations page
+    removed search fields from recommendations page
+    changed .eslint settings
+    cleaned js code
+    removed unneeded packages from package.json
+    combined farmersmarket.js and search.js (formerly add.js)
+    fixed <a href>'s
+    matched selectors
+    removed the window.location from the .js files after API call (need to render the results to screen)
+    deleted farmersmarket.js, transferred code to search.js
+    started the recommendations.js file
+    deleted the index.js file from /public/js (it looks like it got copied from models)
+    added notes to search.js
+
+
+                NOTE: Do not modify code outside of the files listed by your name without talking to me first. If you finish early,
+                      tell me before moving on. Take your time, ask questions, look at examples. We got this!
+_______________________________________________________________________________________________________________________________________
+
+    PRE-LUNCH WORK BY PERSON:
+
+    Natalie (Back/Front):
+
+        Work with Brian to render your results to the table. TOGETHER work in search.js (no .html files)
+
+    Brian (Front):
+
+        Help Natalie render the results to search.html page. TOGETHER (w/ Natalie) work on search.js (no .html files)
+
+    Paul (Front):
+
+        Move routes from <a href>'s to index.js. Work on index.js.
+        Add navbar to search.html using bootstrap. When its displayed let me know. Work on search.html (no search.js).
+
+    Abel (Back):
+
+        Learn Postman w/ Ben, build and test POST route. Work in Postman and apiRoutes.js
+
+______________________________________________________________________________________________________________________________________________
+
+    POST-LUNCH WORK BY PERSON:
+
+    Natalie and Brian:
+
+        Transfer the rendering code from the search.js to the recommendations.js and we will build the "ajax.get". Work on recommendations.js.
+
+    Paul (Front):
+
+        Transfer the navbar to the recommendations page. We will then link the buttons together. 
+
+    Abel (Back):
+
+        Using post man, build a working GET route to deliver "recommended" market results from the database. Postman and apiRoutes.js
