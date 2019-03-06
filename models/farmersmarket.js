@@ -2,7 +2,7 @@
 // =============================================================
 module.exports = function(sequelize, DataTypes){
 
-  var Farmersmarket = sequelize.define("farmersmarket", {
+  var Farmersmarket = sequelize.define("Farmersmarket", {
     // the routeName gets saved as a string
     info: DataTypes.STRING,
     // the name of the Farmersmarket (a string)
