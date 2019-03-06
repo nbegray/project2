@@ -38,21 +38,7 @@ html {
 
 }
 
-/* .parallax { */
-    /* The image used */
-    /* background-image: url('https://d3u03kk87rjfaq.cloudfront.net/wp-content/uploads/2009/06/03145943/farmers-markets.jpg'); */
-    /* background-image: url('https://modernfarmer.com/wp-content/uploads/2015/08/shutterstock_100566316-1200x800.jpg'); */
-    /* Full height */
-    /* height: 100vh;
-    width: 100vw;
-   z-index: -1; */
-    /* Create the parallax scrolling effect */
-    /* position: fixed;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
+
 .parallax {
     /* The image used */
     background-image: url('https://d3u03kk87rjfaq.cloudfront.net/wp-content/uploads/2009/06/03145943/farmers-markets.jpg');
