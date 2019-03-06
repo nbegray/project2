@@ -33,30 +33,64 @@ $(document).ready(function () {
                 var tableRow = "<tr>";
                 // console.log(key);
                 tableRow += "<td>" + marketResult.marketname + "</td>";
-                tableRow += "<td>" + "insert city here" + "</td>";
-                tableRow += "<td>" + "insert state here" + "</td>";
+                tableRow += "<td>" + " " + "</td>";
+                tableRow += "<td>" + " " + "</td>";
                 tableRow += "<td>" + "insert website here" + "</td>";
                 tableRow += "</tr>";
                 console.log(tableRow)
                 $("tbody").append(tableRow);
             })
-    };
+        };
 
-//     //we can use this code below as the start of the "recommend button" which will be next to each result
-    $("#add-btn").on("click", function (event) {
-        event.preventDefault();
-        var marketNameInput = $("#market-name-input").val();
-        var cityInput = $("#city-input").val();
-        var stateInput = $("#state-input").val();
-        var zipcodeInput = $("#zipcode-input").val();
-        console.log(marketNameInput);
-        console.log(cityInput);
-        console.log(stateInput);
-        console.log(zipcodeInput);
-        $.post("api/add", {}, function (res) {
+        $(".moreInfo").on("click", function (e) {
+            event.preventDefault();
+            var marketdetails= e.target.id;
+            getDetails(marketdetails);
 
+            function getDetails(marketdetails) {
+                $.ajax({
+                    type: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    // submit a get request to the restful service mktDetail.
+                    url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + marketdetails,
+                    dataType: 'jsonp',
+                    jsonpCallback: 'detailResultHandler'
+                }).then(function (res) {
+                    console.log(res)
+                    detailResultsHandler(res);
+                }),
+                    //iterate through the JSON result object.
+                    function detailResultHandler(marketdetails) {
+                        var results = marketdetails.results;
+                        console.log(moreMarketDet);
+                        results.forEach(function (marketresults) {
+                            console.log(marketresults.GoogleLink);
+                            console.log(marketresults.Address);
+                            console.log(marketresults.Schedule);
+                            console.log(marketresults.Products);
+
+                        })
+                    }
+            }
+
+
+
+            //     //we can use this code below as the start of the "recommend button" which will be next to each result
+            $("#add-btn").on("click", function (event) {
+                event.preventDefault();
+                var marketNameInput = $("#market-name-input").val();
+                var cityInput = $("#city-input").val();
+                var stateInput = $("#state-input").val();
+                var zipcodeInput = $("#zipcode-input").val();
+                console.log(marketNameInput);
+                console.log(cityInput);
+                console.log(stateInput);
+                console.log(zipcodeInput);
+                $.post("api/add", {}, function (res) {
+
+                })
+            })
         })
-    })
-})
 
-})
+    })
+});
