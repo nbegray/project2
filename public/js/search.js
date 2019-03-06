@@ -15,6 +15,7 @@ $(document).ready(function () {
                 dataType: 'jsonp',
                 jsonpCallback: 'searchResultshandler',
             }).then(function (res) {
+                console.log(res)
                 searchResultsHandler(res);
 
                 //TODO: use J-Query to append results to table
