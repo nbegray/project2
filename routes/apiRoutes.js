@@ -20,7 +20,7 @@ module.exports = function (app) {
       website: req.body.website,
     }).then(function (dbFarmersmarket) {
       console.log(dbFarmersmarket);
-      res.json(dbFarmersmarket);
+      res.send(dbFarmersmarket);
     });
   });
 

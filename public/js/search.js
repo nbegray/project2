@@ -15,35 +15,27 @@ $(document).ready(function () {
                 dataType: 'jsonp',
                 jsonpCallback: 'searchResultshandler',
             }).then(function (res) {
-                var rows = searchResultsHandler(res);
-                $("tbody").append(rows.join(""));
-                //TODO: use J-Query to append results to table
-                //NOTE: make sure they include a button to "recommend" each market
-                // for the appended elements, write a listener that will send an ajax call to the server
-                // with the information for that market to save it into the db
+                searchResultsHandler(res);
             })
         }
-        function searchResultsHandler(farmersMarketdata) {
+        async function searchResultsHandler(farmersMarketdata) {
             var results = farmersMarketdata.results;
-            var rowArray = []
             results.forEach(function (marketResult) {
                 //append tables here
                 var tableRow = "<tr>";
-                // console.log(key);
                 tableRow += "<td>" + marketResult.marketname + "</td>";
                 tableRow += "<td>" + zip + "</td>";
-                tableRow += '<td class="rating" id="' + marketResult.id + '>' + 'Rate' + '</td>';
-                tableRow += '<td class="moreInfo" id="' + marketResult.id + '>' + 'More Info' + '</td>';
+                tableRow += '<td>' + '<button class="rating" id="' + marketResult.id + '">Rate</button></td>';
+                tableRow += '<td>' + '<button class="moreInfo" id="' + marketResult.id + '">More Info</button></td>';
                 tableRow += "</tr>";
-                // console.log($("tbody").html());
-                // $("tbody").append(tableRow);
-                // console.log($("tbody").html());
-                rowArray.push(tableRow);
+                $("tbody").append(tableRow);
             })
         };
 
-        $(".moreInfo").on("click", function (e) {
+        //this is another way to write an event listener which will work on elements created via JavaScript
+        $(document).on("click", ".moreInfo", function (e) {
             event.preventDefault();
+            console.log("working")
             var marketdetails= e.target.id;
             getDetails(marketdetails);
 
@@ -64,6 +56,10 @@ $(document).ready(function () {
                         var results = marketdetails.results;
                         console.log(moreMarketDet);
                         results.forEach(function (marketresults) {
+
+                            //TO-DO: Natalie, get the information returned from the second API call to "populate" into a 
+                            //modal and display for the user
+
                             console.log(marketresults.GoogleLink);
                             console.log(marketresults.Address);
                             console.log(marketresults.Schedule);
@@ -73,7 +69,15 @@ $(document).ready(function () {
                     }
             }
 
+            $(document).on("click", ".rating", function(e){
 
+                //TO-DO: ABEL- write the 'ajax' POST call to "api/recommended" right here
+
+                //hint: use e.target to get info about which button was pressed.
+                //start with console.log(e.target)
+
+
+            })
 
             //     //we can use this code below as the start of the "recommend button" which will be next to each result
             $("#add-btn").on("click", function (event) {
