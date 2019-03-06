@@ -2,19 +2,24 @@ var db = require("../models");
 
 module.exports = function (app) {
   // Get all examples
-  app.get("/api/farmersmarket", function (req, res) {
+  app.get("/api/recommendations", function (req, res) {
+    console.log("call received. Send back the recommended data from db!");
     db.Farmersmarket.findAll({}).then(function (dbFarmersmarket) {
+      console.log(dbFarmersmarket);
       res.json(dbFarmersmarket);
     });
   });
 
-  app.get("/api/farmersmarket/:id", function (req, res) {
-
-    db.Farmersmarket.findOne({
-      where: {
-        id: req.params.id
-      }
+  app.post("/api/recommendations", function (req, res) {
+    console.log(req.body);
+    db.Farmersmarket.create({
+      info: req.body.info,
+      marketName: req.body.marketName,
+      city: req.body.city,
+      state: req.body.state,
+      website: req.body.website,
     }).then(function (dbFarmersmarket) {
+      console.log(dbFarmersmarket);
       res.json(dbFarmersmarket);
     });
   });
