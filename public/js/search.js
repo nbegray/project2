@@ -15,33 +15,33 @@ $(document).ready(function () {
                 dataType: 'jsonp',
                 jsonpCallback: 'searchResultshandler',
             }).then(function (res) {
-                    console.log(res)
-                    searchResultsHandler(res);
+                searchResultsHandler(res);
 
-                    //TODO: use J-Query to append results to table
-                    //NOTE: make sure they include a button to "recommend" each market
-                    // for the appended elements, write a listener that will send an ajax call to the server
-                    // with the information for that market to save it into the db
-                })
+                //TODO: use J-Query to append results to table
+                //NOTE: make sure they include a button to "recommend" each market
+                // for the appended elements, write a listener that will send an ajax call to the server
+                // with the information for that market to save it into the db
+            })
         }
         function searchResultsHandler(farmersMarketdata) {
-            for (var key in farmersMarketdata) {
-                alert(key);
-                var results = farmersMarketdata[key];
-                for (var i = 0; i < results.length; i++) {
-                    var result = results[i];
-                    for (var key in result) {
-                        //only do an alert on the first search result
-                        if (i === 0) {
-                            alert(result[key]);
-                        }
-                    }
-                }
-            }
-        }
-    });
+            var results = farmersMarketdata.results;
+            results.forEach(function (marketResult) {
+                console.log(marketResult.id);
+                console.log(marketResult.marketname);
+                //append tables here
+                var tableRow = "<tr>";
+                // console.log(key);
+                tableRow += "<td>" + marketResult.marketname + "</td>";
+                tableRow += "<td>" + "insert city here" + "</td>";
+                tableRow += "<td>" + "insert state here" + "</td>";
+                tableRow += "<td>" + "insert website here" + "</td>";
+                tableRow += "</tr>";
+                console.log(tableRow)
+                $("tbody").append(tableRow);
+            })
+    };
 
-//we can use this code below as the start of the "recommend button" which will be next to each result
+    //we can use this code below as the start of the "recommend button" which will be next to each result
     $("#add-btn").on("click", function (event) {
         event.preventDefault();
         var marketNameInput = $("#market-name-input").val();
@@ -58,3 +58,4 @@ $(document).ready(function () {
     })
 })
 
+})
