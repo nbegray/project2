@@ -60,13 +60,15 @@ h3 {
 }
 
 .form-group {
+    background-color: peachpuff;
     font-family: 'Rye', cursive;
     font-weight: bold;
+   
 }
 
 #search-btn {
     font-family: 'Rye', cursive;
-    background-color: green;
+    background-color: rgb(101, 190, 101);
     color: black;
     font-weight: bold;
     font-size: 20px;
@@ -74,10 +76,11 @@ h3 {
 
 #add-btn {
     font-family: 'Rye', cursive;
-    background-color: green;
+    background-color: rgb(101, 190, 101);
     color: black;
     font-weight: bold;
     font-size: 20px;
+    /* text-shadow: 2px 2px white; */
 }
 
 .footer {
@@ -105,8 +108,38 @@ h3 {
     /* text-shadow: 2px 2px black; */
 }
 
+.navbar{
 
+    background-color: transparent;
+    font-size: 20px;
+    font-family: 'Rye', cursive; 
+    color: black;
+    
 
+}
+.navbar:hover{
+    color: red;
 
+}
+/* these a: changed the navbar text colors*/
+/* unvisited link */
+a:link {
+    color: rgb(101, 190, 101);
+  }
+  
+  /* visited link */
+  a:visited {
+    color: rgb(101, 190, 101);
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: red;
+  }
+  
+  /* selected link */
+  a:active {
+    color: yellow;
+  }
 
   /* Start http://www.cursors-4u.com */ * {cursor: url(http://cur.cursors-4u.net/food/foo-5/foo430.cur), auto !important;} /* End http://www.cursors-4u.com */
