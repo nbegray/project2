@@ -72,8 +72,15 @@
     search page send API calls, retrieves results, and displays for users
         -each result has a button to "recommend" it to others. this saves that result to the db.
     recommendations page calls to the server, which pulls data from the db and displays for user
+    BUILD A NAVBAR
 
     CHANGES
     splash.html->index.html
     index.html->search.html
     add.html->recommendations.html
+    modified route import in server.js
+    deleted handlebars folder (from starter file)
+    deleted test & migrations folders (not needed)
+    cleaned the .html files
+    copied table to the recommendations page
+    removed search fields from recommendations page

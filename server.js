@@ -23,8 +23,8 @@ app.engine(
 );
 
 // // Routes
-app.use(apiRoutes);
-app.use(htmlRoutes);
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 var syncOptions = { force: false };
 
