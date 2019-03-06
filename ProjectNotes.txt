@@ -92,6 +92,10 @@
     fixed <a href>'s
     matched selectors
     removed the window.location from the .js files after API call (need to render the results to screen)
+    deleted farmersmarket.js, transferred code to search.js
+    started the recommendations.js file
+    deleted the index.js file from /public/js (it looks like it got copied from models)
+    added notes to search.js
 
 
                 NOTE: Do not modify code outside of the files listed by your name without talking to me first. If you finish early,
