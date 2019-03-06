@@ -25,37 +25,60 @@ $(document).ready(function () {
             })
         }
         function searchResultsHandler(farmersMarketdata) {
-            for (var key in farmersMarketdata) {
-                alert(key);
-                var results = farmersMarketdata[key];
+            var results = farmersMarketdata.results;
+            results.forEach(function (marketResult) {
+                console.log(marketResult.id);
+                console.log(marketResult.marketname);
+                //append tables here
+                var tableRow = $("tr")
+                // console.log(key);
+                var newMarketName = $("td").text(key);
+
+                tableRow.append(newMarketName);
+
+                $("#append-here").append(tableRow);
+            })
+
+
+            // console.log(farmersMarketdata);
+            for (var data in farmersMarketdata) {
+                // console.log(data);
+                var results = farmersMarketdata[data];
                 for (var i = 0; i < results.length; i++) {
                     var result = results[i];
                     for (var key in result) {
                         //only do an alert on the first search result
                         if (i === 0) {
-                        
-                            var newMarket = $("<tr>").append(
-                                $("<td>").text(key),
-                                // $("<td>").text(key),
-                                // $("<td>").text(key),
-                                // $("<td>").text(key),
-                                // $("<td>").text(nextTrainConv),
-                                // $("<td>").text(tMinutesTillTrain),
-                    
-                    
+                            var tableRow = $("tr")
+                            // console.log(key);
+                            var newMarketName = $(tableRow).append(
+                                $("td").text(key),
                             );
-                    
-                            // Append the new row to the table
-                    
-                            $("#market-info > tbody").append(newMarket);
-                    
 
+                            var newCity = $(tableRow).append(
+                                $("td").text(key),
+                            );
+
+                            var newState = $(tableRow).append(
+                                $("td").text(key),
+                            );
+
+                            var newWebsite = $(tableRow).append(
+                                $("td").text(key),
+                            );
+
+                            $("#append-here").append(tableRow);
+                            // Append the new row to the table
+                            // $("#market-info > tbody").append(newMarketName);
+                            // $("#market-info > tbody").append(newCity);
+                            // $("#market-info > tbody").append(newState);
+                            // $("#market-info > tbody").append(newWebsite);
 
                             //append method in this area
-                            var marketName = $(key).append("marketName");
-                            var city = $().append("city");
-                            var state = $(key).append("state");
-                            var website = $(key).append("website");
+                            // var marketName = $(key).append("marketName");
+                            // var city = $(key).append("city");
+                            // var state = $(key).append("state");
+                            // var website = $(key).append("website");
                             console.table(result[key]);
                         }
                     }
