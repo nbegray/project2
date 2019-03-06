@@ -1,3 +1,2 @@
-$(document).ready(function(){
-    //maybe more code here
-})
+
+//no code needed at this time. We really should move the routes from <a href> to $(selector).on("click", ()=>{window.location("/search.html")})...

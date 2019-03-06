@@ -92,3 +92,43 @@
     fixed <a href>'s
     matched selectors
     removed the window.location from the .js files after API call (need to render the results to screen)
+
+
+                NOTE: Do not modify code outside of the files listed by your name without talking to me first. If you finish early,
+                      tell me before moving on. Take your time, ask questions, look at examples. We got this!
+_______________________________________________________________________________________________________________________________________
+
+    PRE-LUNCH WORK BY PERSON:
+
+    Natalie (Back/Front):
+
+        Work with Brian to render your results to the table. TOGETHER work in search.js (no .html files)
+
+    Brian (Front):
+
+        Help Natalie render the results to search.html page. TOGETHER (w/ Natalie) work on search.js (no .html files)
+
+    Paul (Front):
+
+        Move routes from <a href>'s to index.js. Work on index.js.
+        Add navbar to search.html using bootstrap. When its displayed let me know. Work on search.html (no search.js).
+
+    Abel (Back):
+
+        Learn Postman w/ Ben, build and test POST route. Work in Postman and apiRoutes.js
+
+______________________________________________________________________________________________________________________________________________
+
+    POST-LUNCH WORK BY PERSON:
+
+    Natalie and Brian:
+
+        Transfer the rendering code from the search.js to the recommendations.js and we will build the "ajax.get". Work on recommendations.js.
+
+    Paul (Front):
+
+        Transfer the navbar to the recommendations page. We will then link the buttons together. 
+
+    Abel (Back):
+
+        Using post man, build a working GET route to deliver "recommended" market results from the database. Postman and apiRoutes.js
