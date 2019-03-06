@@ -27,75 +27,20 @@ $(document).ready(function () {
         function searchResultsHandler(farmersMarketdata) {
             var results = farmersMarketdata.results;
             results.forEach(function (marketResult) {
-                // console.log(marketResult.id);
+                console.log(marketResult.id);
                 console.log(marketResult.marketname);
                 //append tables here
-               var newMarketName = marketResult.marketname;
-               var newMarketID = marketResult.id;
-
-            //    var newMarket = $("<tr>").append(
-            //     $("<td>").text(newMarketName),
-            //     $("<td>").text(newMarketID),
-                
-            //    );
-            // );
-                var tableRow = $("tr").append (
+                var tableRow = "<tr>";
                 // console.log(key);
-                 $("td").text(newMarketName),
-                 $("td").text(newMarketID),
-                );
-                //tableRow.append(newMarketName);
-
-                $("#append-here").append(tableRow);
+                tableRow += "<td>" + marketResult.marketname + "</td>";
+                tableRow += "<td>" + "insert city here" + "</td>";
+                tableRow += "<td>" + "insert state here" + "</td>";
+                tableRow += "<td>" + "insert website here" + "</td>";
+                tableRow += "</tr>";
+                console.log(tableRow)
+                $("tbody").append(tableRow);
             })
-
-
-    //         // console.log(farmersMarketdata);
-    //         for (var data in farmersMarketdata) {
-    //             // console.log(data);
-    //             var results = farmersMarketdata[data];
-    //             for (var i = 0; i < results.length; i++) {
-    //                 var result = results[i];
-    //                 for (var key in result) {
-    //                     //only do an alert on the first search result
-    //                     if (i === 0) {
-    //                         var tableRow = $("tr")
-    //                         // console.log(key);
-    //                         var newMarketName = $(tableRow).append(
-    //                             $("td").text(key),
-    //                         );
-
-    //                         var newCity = $(tableRow).append(
-    //                             $("td").text(key),
-    //                         );
-
-    //                         var newState = $(tableRow).append(
-    //                             $("td").text(key),
-    //                         );
-
-    //                         var newWebsite = $(tableRow).append(
-    //                             $("td").text(key),
-    //                         );
-
-    //                         $("#append-here").append(tableRow);
-    //                         // Append the new row to the table
-    //                         // $("#market-info > tbody").append(newMarketName);
-    //                         // $("#market-info > tbody").append(newCity);
-    //                         // $("#market-info > tbody").append(newState);
-    //                         // $("#market-info > tbody").append(newWebsite);
-
-    //                         //append method in this area
-    //                         // var marketName = $(key).append("marketName");
-    //                         // var city = $(key).append("city");
-    //                         // var state = $(key).append("state");
-    //                         // var website = $(key).append("website");
-    //                         console.table(result[key]);
-    //                     }
-    //                 }
-    //             }
-    //         }
-        }
-    });
+    };
 
 //     //we can use this code below as the start of the "recommend button" which will be next to each result
     $("#add-btn").on("click", function (event) {
@@ -112,4 +57,6 @@ $(document).ready(function () {
 
         })
     })
-});
+})
+
+})
