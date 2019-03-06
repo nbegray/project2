@@ -11,7 +11,7 @@ module.exports = function (app) {
       });
     });
   });
-  app.get("/farmersmarket/:id", function (req, res) {
+  app.get("/reccomendations", function (req, res) {
     db.Farmersmarket.findOne({ where: { id: req.params.id } }).then(function (dbFarmersmarket) {
       res.render("Farmersmarket", {
         Farmersmarket: dbFarmersmarket
@@ -19,7 +19,7 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/farmersmarket/:name", function (req, res) {
+  app.get("/search", function (req, res) {
     db.Farmersmarket.findOne({ where: { id: req.params.name } }).then(function (dbFarmersmarket) {
       res.render("Farmersmarket", {
         Farmersmarket: dbFarmersmarket
