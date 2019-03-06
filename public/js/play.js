@@ -30,21 +30,12 @@ $(document).ready(function () {
                 // console.log(marketResult.id);
                 console.log(marketResult.marketname);
                 //append tables here
-               var newMarketName = marketResult.marketname;
-               var newMarketID = marketResult.id;
-
-            //    var newMarket = $("<tr>").append(
-            //     $("<td>").text(newMarketName),
-            //     $("<td>").text(newMarketID),
-                
-            //    );
-            // );
-                var tableRow = $("tr").append (
+               var newMarketName = marketResult.marketname
+                var tableRow = $("tr")
                 // console.log(key);
-                 $("td").text(newMarketName),
-                 $("td").text(newMarketID),
-                );
-                //tableRow.append(newMarketName);
+                var newMarketName = $("td").text(key);
+
+                tableRow.append(newMarketName);
 
                 $("#append-here").append(tableRow);
             })
