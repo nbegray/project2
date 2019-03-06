@@ -34,25 +34,20 @@
     <div class="container">
         <h1 class="text-center">Farmers Market Finder</h1>
     </div>
-    <div class="row">
-    </div>
     <br>
-    <div class="row"></div>
     <div class="col-lg-12">
         <!-- Add Farmers Market  -->
         <div class="columns">
             <div class="column"></div>
             <div class="column">
-
-
                 <div class="add-card">
                     <div class="card-header">
-                        <h3>Add A Farmers Market</h3>
+                        <h3>Recommended Farmers Markets</h3>
                     </div>
                     <div class="card-body">
                         <!-- Entry Form -->
                         <form>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="market-name-input">Market Name</label>
                                 <input class="form-control" id="market-name-input" type="text">
                             </div>
@@ -63,32 +58,61 @@
                             <div class="form-group">
                                 <label for="state-input">State</label>
                                 <input class="form-control" id="state-input" type="text">
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label for="zipcode-input">Zip Code</label>
                                 <input class="form-control" id="zipcode-input" type="text">
                             </div>
-                            <button class="btn btn-success float-middle" id="add-btn">Add</button>
+                            <button class="btn btn-success float-middle" id="add-btn">Find by Zip Code</button>
                         </form>
                     </div>
                 </div>
             </div>
             <div class="column"></div>
         </div>
-    </div>
-    </div>
-    </div>
-
-    <!-- Footer here! -->
-    <footer class="footer">
-        <div class="content has-text-centered">
-            <p>
-                <strong>Website</strong> created by
-                <a href="https://jgthms.com">Paul Rodriguez, Brian Hopkins, Abel Tejada, and Natalie Edmonson</a>.
-            </p>
-        </div>
-    </footer>
-    <script src="js/add.js"></script>
+        <div class="container2">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="index">
+                        </div>
+                        <div class="card-header">
+                            <h3>Farmers Markets Near You</h3>
+                        </div>
+                        <div class="index-body">
+                            <table class="table table-sm table-hover" id='market-info'>
+                                <thead>
+                                    <tr>
+                                        <th>Info</th>
+                                        <th>Market Name</th>
+                                        <th>City</th>
+                                        <th>State</th>
+                                        <th>Website</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+                </div>
+            </div>
+            </div>
+        <!-- Footer here! -->
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <p>
+                    <strong>Website</strong> created by
+                    <a href="https://jgthms.com">Paul Rodriguez, Brian Hopkins, Abel Tejada, and Natalie Edmonson</a>.
+                </p>
+            </div>
+        </footer>
+        <script src="js/recommendations.js"></script>
 </body>
 
 </html
