@@ -36,11 +36,45 @@
 </head>
 
 <body>
+    <!-- Modal -->
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Info About This Market</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                        <table class="table table-sm table-hover" id='market-details'>
+                                <thead>
+                                    <tr>
+                                        <!-- <th>Info</th> -->
+                                        <th>Google Link:</th>
+                                        <th>Address:</th>
+                                        <th>Products:</th>
+                                        <th>Schedule:</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="details-here">
+                                </tbody>
+                            </table>
+
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="div-container">
         <div class="pos-f-t">
             <div class="collapse" id="navbarToggleExternalContent">
-                <div class="navbar navbar-light"> 
-                     
+                <div class="navbar navbar-light">
+
                     <ul>
                         <li class="nav-item">
                             <a class="nav-link" href="./index.html">Home</a>
@@ -115,20 +149,13 @@
                         <thead>
                             <tr>
                                 <!-- <th>Info</th> -->
-                                <th>Market Name</th>
-                                <th>City</th>
-                                <th>State</th>
-                                <th>Website</th>
+                                <th>Proximity (in miles)/Market Name</th>
+                                <th>Zip Code</th>
+                                <th>Rating</th>
+                                <th>More Info</th>
                             </tr>
                         </thead>
                         <tbody id="append-here">
-                            <tr>
-                                <!-- <th>Info</th> -->
-                                <th>Mesa Market</th>
-                                <th>Mesa</th>
-                                <th>AZ</th>
-                                <th>mesamarket.com</th>
-                            </tr>
                         </tbody>
                     </table>
                 </div>

@@ -15,82 +15,103 @@ $(document).ready(function () {
                 dataType: 'jsonp',
                 jsonpCallback: 'searchResultshandler',
             }).then(function (res) {
-                console.log(res)
+                debugger
                 searchResultsHandler(res);
-
-                //TODO: use J-Query to append results to table
-                //NOTE: make sure they include a button to "recommend" each market
-                // for the appended elements, write a listener that will send an ajax call to the server
-                // with the information for that market to save it into the db
             })
         }
-        function searchResultsHandler(farmersMarketdata) {
+        async function searchResultsHandler(farmersMarketdata) {
+            console.log("helloooooooooo")
+            console.log(farmersMarketdata.results)
             var results = farmersMarketdata.results;
             results.forEach(function (marketResult) {
-                console.log(marketResult.id);
-                console.log(marketResult.marketname);
+                console.log(marketResult.marketName)
+                debugger;
                 //append tables here
                 var tableRow = "<tr>";
-                // console.log(key);
                 tableRow += "<td>" + marketResult.marketname + "</td>";
-                tableRow += "<td>" + " " + "</td>";
-                tableRow += "<td>" + " " + "</td>";
-                tableRow += "<td>" + "insert website here" + "</td>";
+                tableRow += "<td>" + zip + "</td>";
+                tableRow += '<td>' + '<button class="rating" marketName="' + marketResult.marketname + '  id="' + marketResult.id + '">Rate</button></td>';
+                tableRow += '<td>' + '<button class="moreInfo" id="' + marketResult.id + '">More Info</button></td>';
                 tableRow += "</tr>";
-                console.log(tableRow)
                 $("tbody").append(tableRow);
+
             })
+
         };
 
-        $(".moreInfo").on("click", function (e) {
+        //this is another way to write an event listener which will work on elements created via JavaScript
+        $(document).on("click", ".moreInfo", function (e) {
             event.preventDefault();
-            var marketdetails= e.target.id;
-            getDetails(marketdetails);
+            console.log("working")
+            var id = e.target.id;
+            getDetails(id);
 
-            function getDetails(marketdetails) {
+            function getDetails(id) {
                 $.ajax({
                     type: "GET",
                     contentType: "application/json; charset=utf-8",
                     // submit a get request to the restful service mktDetail.
-                    url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + marketdetails,
+                    url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + id,
                     dataType: 'jsonp',
-                    jsonpCallback: 'detailResultHandler'
-                }).then(function (res) {
-                    console.log(res)
-                    detailResultsHandler(res);
-                }),
-                    //iterate through the JSON result object.
-                    function detailResultHandler(marketdetails) {
-                        var results = marketdetails.results;
-                        console.log(moreMarketDet);
-                        results.forEach(function (marketresults) {
-                            console.log(marketresults.GoogleLink);
-                            console.log(marketresults.Address);
-                            console.log(marketresults.Schedule);
-                            console.log(marketresults.Products);
-
-                        })
-                    }
-            }
-
-
-
-            //     //we can use this code below as the start of the "recommend button" which will be next to each result
-            $("#add-btn").on("click", function (event) {
-                event.preventDefault();
-                var marketNameInput = $("#market-name-input").val();
-                var cityInput = $("#city-input").val();
-                var stateInput = $("#state-input").val();
-                var zipcodeInput = $("#zipcode-input").val();
-                console.log(marketNameInput);
-                console.log(cityInput);
-                console.log(stateInput);
-                console.log(zipcodeInput);
-                $.post("api/add", {}, function (res) {
-
+                    jsonpCallback: 'detailResultHandler',
+                }).then(function (response) {
+                    console.log(response),
+                        detailResultHandler(response)
                 })
-            })
-        })
+                //iterate through the JSON result object.
+                function detailResultHandler(market) {
+                    var results = market.results;
+                    console.log(results);
+                    results.forEach(function (marketdetails) {
+                        var detailRow = "<tr>";
 
+                        detailRow += "<td>" + marketdetails.address + "</td>";
+                        detailRow += "<td>" + marketdetails.googlelink + "</td>";
+                        detailRow += "<td>" + marketdetails.schedule + "</td>";
+                        detailRow += "<td>" + marketdetails.products + "</td>";
+                        detailRow += "</tr>";
+                        $("#details-here").append(detailRow);
+                        //TO-DO: Natalie, get the information returned from the second API call to "populate" into a 
+                        //modal and display for the user
+
+                        // console.log(results.googlelink);
+                        // console.log(results.address);
+                        // console.log(results.schedule);
+                        // console.log(results.products);
+
+                    })
+                }
+            }
+        })
+    });
+    $(document).on("click", ".rating", function (e) {
+        console.log("hey click handler")
+
+        var recId = $(this).attr("id");
+
+        $.ajax({
+            type: "POST",
+            url: "api/recommendation",
+            data: {
+                id: recId,
+                info: null,
+                marketName: null,
+                city: null,
+                state: null,
+                website: null,
+            }
+        }).then(function (res) {
+            console.log(res)
+        })
     })
-});
+})
+
+
+
+// $(document).on("click", ".rating", function (e) {
+
+                //TO-DO: ABEL- write the 'ajax' POST call to "api/recommended" right here
+
+                //hint: use e.target to get info about which button was pressed.
+                //start with console.log(e.target)
+

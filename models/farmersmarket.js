@@ -1,24 +1,28 @@
 // Dependencies
 // =============================================================
-module.exports = function(sequelize, DataTypes){
+module.exports = function (sequelize, DataTypes) {
 
   var Farmersmarket = sequelize.define("Farmersmarket", {
     // the routeName gets saved as a string
-    info: DataTypes.STRING,
+    info: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+    },
     // the name of the Farmersmarket (a string)
     marketName: DataTypes.STRING,
     // the Farmersmarket's role (a string)
-    city: DataTypes.STRING,  
+    city: DataTypes.STRING,
     // the Farmersmarket's age (a string)
     state: DataTypes.STRING,
     // and the Farmersmarket's force points (an int)
     website: DataTypes.STRING
   }, {
-    // disable the modification of tablenames; By default, sequelize will automatically
-    // transform all passed model names (first parameter of define) into plural.
-    // if you don't want that, set the following
-    freezeTableName: true
-  });
+      // disable the modification of tablenames; By default, sequelize will automatically
+      // transform all passed model names (first parameter of define) into plural.
+      // if you don't want that, set the following
+      freezeTableName: true
+    });
   return Farmersmarket;
 };
 
