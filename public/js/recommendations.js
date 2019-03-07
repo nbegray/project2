@@ -15,7 +15,7 @@ $(document).ready(function () {
             var tableRow = "<tr>";
             tableRow += "<td>" + marketResult.marketName + "</td>";
             tableRow += "<td>" + "zip" + "</td>";
-            tableRow += '<td>' + '<button class="rating" id="' + "marketResult.dataValues.id" + '">Rate</button></td>';
+            // tableRow += '<td>' + '<button class="rating" id="' + "marketResult.dataValues.id" + '">Rate</button></td>';
             tableRow += '<td>' + '<button class="moreInfo" id="' + "marketResult.dataValues.id "+ '">More Info</button></td>';
             tableRow += "</tr>";
             $("tbody").append(tableRow);
