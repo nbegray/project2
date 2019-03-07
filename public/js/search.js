@@ -15,7 +15,7 @@ $(document).ready(function () {
                 dataType: 'jsonp',
                 jsonpCallback: 'searchResultshandler',
             }).then(function (res) {
-                debugger
+                // debugger
                 searchResultsHandler(res);
             })
         }
@@ -25,7 +25,7 @@ $(document).ready(function () {
             var results = farmersMarketdata.results;
             results.forEach(function (marketResult) {
                 console.log(marketResult.marketName)
-                debugger;
+                // debugger;
                 //append tables here
                 var tableRow = "<tr>";
                 tableRow += "<td>" + marketResult.marketname + "</td>";
@@ -86,16 +86,18 @@ $(document).ready(function () {
     });
     $(document).on("click", ".rating", function (e) {
         console.log("hey click handler")
+        console.log(e.target)
 
+        var recInfo = $(this).attr("id");
+        var recName = $(this).attr("marketName");
         var recId = $(this).attr("id");
 
         $.ajax({
             type: "POST",
-            url: "api/recommendation",
+            url: "api/recommendations",
             data: {
-                id: recId,
-                info: null,
-                marketName: null,
+                info: recInfo,
+                marketName: recName,
                 city: null,
                 state: null,
                 website: null,
@@ -105,11 +107,6 @@ $(document).ready(function () {
         })
     })
 })
-
-
-
-// $(document).on("click", ".rating", function (e) {
-
                 //TO-DO: ABEL- write the 'ajax' POST call to "api/recommended" right here
 
                 //hint: use e.target to get info about which button was pressed.
