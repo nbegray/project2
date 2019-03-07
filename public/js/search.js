@@ -94,9 +94,6 @@ $(document).ready(function () {
             data: {
                 info: recInfo,
                 marketName: recName,
-                city: null,
-                state: null,
-                website: null,
             }
         }).then(function (res) {
             console.log(res)
