@@ -2,13 +2,14 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
@@ -29,7 +30,10 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./styles/style.css">
     <link href="https://fonts.googleapis.com/css?family=Ewert" rel="stylesheet">
+
     <title>Farmers Market Finder</title>
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
 </head>
 
 <body>
@@ -44,22 +48,22 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                        <table class="table table-sm table-hover" id='market-details'>
-                                <thead>
-                                    <tr>
-                                        <!-- <th>Info</th> -->
-                                        
-                                        <th>Address:</th>
-                                        <th>Google Link:</th>
-                                        <th>Products:</th>
-                                        <th>Schedule:</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="details-here">
-                                </tbody>
-                            </table>
+                    <table class="table table-sm table-hover" id='market-details'>
+                        <thead>
+                            <tr>
+                                <!-- <th>Info</th> -->
 
-                    
+                                <th>Address:</th>
+                                <th>Google Link:</th>
+                                <th>Products:</th>
+                                <th>Schedule:</th>
+                            </tr>
+                        </thead>
+                        <tbody id="details-here">
+                        </tbody>
+                    </table>
+
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close-btn">Close</button>
@@ -177,7 +181,7 @@
             </p>
         </div>
     </footer>
- 
+
 
     <script src="js/search.js"></script>
 
