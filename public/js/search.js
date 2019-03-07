@@ -73,12 +73,10 @@ $(document).ready(function () {
                         $("#details-here").append(detailRow);
                         //TO-DO: Natalie, get the information returned from the second API call to "populate" into a 
                         //modal and display for the user
-
                         // console.log(results.googlelink);
                         // console.log(results.address);
                         // console.log(results.schedule);
                         // console.log(results.products);
-
                     })
                 }
             }
@@ -88,16 +86,16 @@ $(document).ready(function () {
         console.log("hey click handler")
         console.log(e.target)
 
-        var recInfo = $(this).attr("id");
-        var recName = $(this).attr("marketName");
-        var recId = $(this).attr("id");
+        // var recInfo = $(this).attr("id");
+        // var recName = $(this).attr("marketName");
+        // var recId = $(this).attr("id");
 
         $.ajax({
             type: "POST",
             url: "api/recommendations",
             data: {
-                info: recInfo,
-                marketName: recName,
+                info: e.target.id,
+                marketName: e.target.marketname,
                 city: null,
                 state: null,
                 website: null,
