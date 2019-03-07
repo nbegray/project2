@@ -11,7 +11,8 @@ module.exports = function (app) {
   });
 
   app.post("/api/recommendations", function (req, res) {
-    console.log(req.body);
+    console.log("we are in the post route");
+    // console.log(req.body);
     db.Farmersmarket.create({
       info: req.body.info,
       marketName: req.body.marketName,
