@@ -76,11 +76,9 @@ $(document).ready(function () {
     $(document).on("click", ".rating", function (e) {
         console.log("hey click handler")
         console.log(e.target)
-
         // var recInfo = $(this).attr("id");
         // var recName = $(this).attr("marketName");
         // var recId = $(this).attr("id");
-
         $.ajax({
             type: "POST",
             url: "api/recommendations",
