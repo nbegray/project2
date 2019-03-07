@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -30,12 +31,13 @@
     <link rel="stylesheet" href="./styles/style_search.css">
     <link href="https://fonts.googleapis.com/css?family=Ewert" rel="stylesheet">
     <title>Farmers Market Finder</title>
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
 </head>
 
 <body>
-    
     <!-- Modal -->
-    <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal" tabindex="-1" role="dialog" id="myModal" data-backdrop="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -61,7 +63,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close-btn">Close</button>
                 </div>
             </div>
         </div>
@@ -71,7 +73,6 @@
         <div class="pos-f-t">
             <div class="collapse" id="navbarToggleExternalContent">
                 <div class="navbar navbar-light">
-
                     <ul>
                         <li class="nav-item">
                             <a class="nav-link" href="./index.html">Home</a>
@@ -146,7 +147,7 @@
                         <thead>
                             <tr>
                                 <!-- <th>Info</th> -->
-                                <th>Proximity (in miles)/Market Name</th>
+                                <th>Proximity (in miles) / Market Name</th>
                                 <th>Zip Code</th>
                                 <th>Rating</th>
                                 <th>More Info</th>
@@ -176,6 +177,7 @@
             </p>
         </div>
     </footer>
+
 
     <script src="js/search.js"></script>
 
