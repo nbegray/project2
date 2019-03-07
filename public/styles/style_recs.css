@@ -1,0 +1,145 @@
+.text-center {
+    font-family: 'Rye', cursive;
+    font-size: 100px;
+    /* background-color: #8a8a8a70; */
+    color: red;
+    text-shadow: 2px 2px black;
+}
+
+body {
+    background: url("../img/produce.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 200vh;
+    width: 100vw;
+}
+
+.card-header {
+    background-color: peachpuff;
+    color: black;
+    font-weight: bold;
+    font-family: 'Rye', cursive;
+    font-size: 20px;
+}
+
+
+.container2 {
+    max-width: 80%;
+    margin: auto;
+}
+
+.card-body {
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    font-family: 'Rye', cursive;
+    /* text-shadow: 2px 2px black; */
+}
+
+h3 {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.add-card {
+    margin: auto;
+    /* background-color: #8a8a8a70; */
+    color: black;
+    font-size: 20px;
+    
+}
+
+#market-info {
+    font-family: 'Rye', cursive;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.form-group {
+    background-color: peachpuff;
+    font-family: 'Rye', cursive;
+    font-weight: bold;
+   
+}
+
+#search-btn {
+    font-family: 'Rye', cursive;
+    background-color:peachpuff;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#add-btn {
+    font-family: 'Rye', cursive;
+    background-color: peachpuff;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    /* text-shadow: 2px 2px white; */
+}
+
+.footer {
+    border-top: 2px solid black;
+    font-family: 'Rye', cursive;
+    margin-top: 2px;
+    position: fixed;
+    height: 40px;
+    padding: 0px;
+    left: 0; 
+    bottom: 0;
+    width: 100%;
+    background-color: peachpuff;
+    color: black;
+    text-align: center;
+}
+
+
+
+.search-body {
+    font-size: 20px;
+    /* margin: auto; */
+    color: black;
+    font-family: 'Rye', cursive;
+    /* text-shadow: 2px 2px black; */
+}
+
+.navbar{
+
+    background-color: transparent;
+    font-size: 20px;
+    font-family: 'Rye', cursive; 
+    color: black;
+    
+
+}
+.navbar:hover{
+    color: red;
+
+}
+/* these a: changed the navbar text colors*/
+/* unvisited link */
+a:link {
+    color: rgb(101, 190, 101);
+  }
+  
+  /* visited link */
+  a:visited {
+    color: rgb(101, 190, 101);
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: red;
+  }
+  
+  /* selected link */
+  a:active {
+    color: yellow;
+  }
+
+  /* Start http://www.cursors-4u.com */ * {cursor: url(http://cur.cursors-4u.net/food/foo-5/foo430.cur), auto !important;} /* End http://www.cursors-4u.com */
