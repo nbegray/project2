@@ -15,7 +15,11 @@ $(document).ready(function () {
                 dataType: 'jsonp',
                 jsonpCallback: 'searchResultshandler',
             }).then(function (res) {
+<<<<<<< HEAD
                 // debugger
+=======
+              
+>>>>>>> 65ff918961de8f0457659f2bb797bd3f7187e851
                 searchResultsHandler(res);
             })
         }
@@ -24,13 +28,18 @@ $(document).ready(function () {
             console.log(farmersMarketdata.results)
             var results = farmersMarketdata.results;
             results.forEach(function (marketResult) {
+<<<<<<< HEAD
                 console.log(marketResult.marketName)
                 // debugger;
+=======
+                console.log(marketResult.marketname)
+                
+>>>>>>> 65ff918961de8f0457659f2bb797bd3f7187e851
                 //append tables here
                 var tableRow = "<tr>";
                 tableRow += "<td>" + marketResult.marketname + "</td>";
                 tableRow += "<td>" + zip + "</td>";
-                tableRow += '<td>' + '<button class="rating" marketName="' + marketResult.marketname + '  id="' + marketResult.id + '">Rate</button></td>';
+                tableRow += '<td>' + '<button class="rating" marketName="'+ marketResult.marketname +'  id="' + marketResult.id + '">Rate</button></td>';
                 tableRow += '<td>' + '<button class="moreInfo" id="' + marketResult.id + '">More Info</button></td>';
                 tableRow += "</tr>";
                 $("tbody").append(tableRow);
@@ -43,44 +52,44 @@ $(document).ready(function () {
         $(document).on("click", ".moreInfo", function (e) {
             event.preventDefault();
             console.log("working")
-            var id = e.target.id;
-            getDetails(id);
+            var marketdetails = e.target.id;
+            getDetails(marketdetails);
 
-            function getDetails(id) {
+            function getDetails(marketdetails) {
                 $.ajax({
                     type: "GET",
                     contentType: "application/json; charset=utf-8",
                     // submit a get request to the restful service mktDetail.
-                    url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + id,
+                    url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + marketdetails,
                     dataType: 'jsonp',
-                    jsonpCallback: 'detailResultHandler',
-                }).then(function (response) {
-                    console.log(response),
-                        detailResultHandler(response)
-                })
-                //iterate through the JSON result object.
-                function detailResultHandler(market) {
-                    var results = market.results;
-                    console.log(results);
-                    results.forEach(function (marketdetails) {
-                        var detailRow = "<tr>";
+                    jsonpCallback: 'detailResultHandler'
+                }).then(function (res) {
+                    console.log(res)
+                    detailResultsHandler(res);
+                }),
+                    //iterate through the JSON result object.
+                    async function detailResultHandler(farmersmarket) {
+                        var results = farmersmarket.results;
+                        console.log(results);
+                        results.forEach(function (resultsDetail) {
+                            var detailRow = "<tr>";
+                            
+                            detailRow += "<td>" + resultsDetail.Address + "</td>";
+                            detailRow += "<td>" + resultsDetail.GoogleLink + "</td>";
+                            detailRow += "<td>" + resultsDetail.Schedule + "</td>";
+                            detailRow += "<td>" + resultsDetail.Products + "</td>";
+                            detailRow += "</tr>";
+                            $("#details-here").append(detailRow);
+                            //TO-DO: Natalie, get the information returned from the second API call to "populate" into a 
+                            //modal and display for the user
 
-                        detailRow += "<td>" + marketdetails.address + "</td>";
-                        detailRow += "<td>" + marketdetails.googlelink + "</td>";
-                        detailRow += "<td>" + marketdetails.schedule + "</td>";
-                        detailRow += "<td>" + marketdetails.products + "</td>";
-                        detailRow += "</tr>";
-                        $("#details-here").append(detailRow);
-                        //TO-DO: Natalie, get the information returned from the second API call to "populate" into a 
-                        //modal and display for the user
+                            console.log(results.googlelink);
+                            console.log(results.address);
+                            console.log(results.schedule);
+                            console.log(results.products);
 
-                        // console.log(results.googlelink);
-                        // console.log(results.address);
-                        // console.log(results.schedule);
-                        // console.log(results.products);
-
-                    })
-                }
+                        })
+                    }
             }
         })
     });
@@ -107,8 +116,17 @@ $(document).ready(function () {
         })
     })
 })
+<<<<<<< HEAD
                 //TO-DO: ABEL- write the 'ajax' POST call to "api/recommended" right here
+=======
 
-                //hint: use e.target to get info about which button was pressed.
-                //start with console.log(e.target)
+
+
+            // $(document).on("click", ".rating", function (e) {
+
+            //     //TO-DO: ABEL- write the 'ajax' POST call to "api/recommended" right here
+>>>>>>> 65ff918961de8f0457659f2bb797bd3f7187e851
+
+            //     //hint: use e.target to get info about which button was pressed.
+            //     //start with console.log(e.target)
 
