@@ -92,11 +92,8 @@ $(document).ready(function () {
             type: "POST",
             url: "api/recommendations",
             data: {
-                info: recInfo,
-                marketName: recName,
-                city: null,
-                state: null,
-                website: null,
+                info: e.target.id,
+                marketName: e.target.marketname
             }
         }).then(function (res) {
             console.log(res)

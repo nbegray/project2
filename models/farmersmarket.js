@@ -11,12 +11,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     // the name of the Farmersmarket (a string)
     marketName: DataTypes.STRING,
-    // the Farmersmarket's role (a string)
-    city: DataTypes.STRING,
-    // the Farmersmarket's age (a string)
-    state: DataTypes.STRING,
-    // and the Farmersmarket's force points (an int)
-    website: DataTypes.STRING
+ 
   }, {
       // disable the modification of tablenames; By default, sequelize will automatically
       // transform all passed model names (first parameter of define) into plural.
