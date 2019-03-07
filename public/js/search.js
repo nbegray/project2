@@ -92,8 +92,8 @@ $(document).ready(function () {
             type: "POST",
             url: "api/recommendations",
             data: {
-                info: e.target.id,
-                marketName: e.target.marketname
+                info: recInfo,
+                marketName: recName
             }
         }).then(function (res) {
             console.log(res)
