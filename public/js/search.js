@@ -15,7 +15,11 @@ $(document).ready(function () {
                 dataType: 'jsonp',
                 jsonpCallback: 'searchResultshandler',
             }).then(function (res) {
+<<<<<<< HEAD
               
+=======
+                // debugger
+>>>>>>> cecf4754b63eca8732e610b7c73e91306914a8b4
                 searchResultsHandler(res);
             })
         }
@@ -24,8 +28,13 @@ $(document).ready(function () {
             console.log(farmersMarketdata.results)
             var results = farmersMarketdata.results;
             results.forEach(function (marketResult) {
+<<<<<<< HEAD
                 console.log(marketResult.marketname)
                 
+=======
+                console.log(marketResult.marketName)
+                // debugger;
+>>>>>>> cecf4754b63eca8732e610b7c73e91306914a8b4
                 //append tables here
                 var tableRow = "<tr>";
                 tableRow += "<td>" + marketResult.marketname + "</td>";
@@ -86,16 +95,18 @@ $(document).ready(function () {
     });
     $(document).on("click", ".rating", function (e) {
         console.log("hey click handler")
+        console.log(e.target)
 
+        var recInfo = $(this).attr("id");
+        var recName = $(this).attr("marketName");
         var recId = $(this).attr("id");
 
         $.ajax({
             type: "POST",
-            url: "api/recommendation",
+            url: "api/recommendations",
             data: {
-                id: recId,
-                info: null,
-                marketName: null,
+                info: recInfo,
+                marketName: recName,
                 city: null,
                 state: null,
                 website: null,
@@ -105,12 +116,16 @@ $(document).ready(function () {
         })
     })
 })
+<<<<<<< HEAD
 
 
 
             // $(document).on("click", ".rating", function (e) {
 
             //     //TO-DO: ABEL- write the 'ajax' POST call to "api/recommended" right here
+=======
+                //TO-DO: ABEL- write the 'ajax' POST call to "api/recommended" right here
+>>>>>>> cecf4754b63eca8732e610b7c73e91306914a8b4
 
             //     //hint: use e.target to get info about which button was pressed.
             //     //start with console.log(e.target)
