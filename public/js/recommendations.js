@@ -1,3 +1,23 @@
+$.ajax({
+    method: "GET",
+    url: "/api/recommendations",
+    dataType: 'json'
+}).then(function (res) {
+    console.log("listening")
+    console.log(res)
+    var results = res;
+    results.forEach(function (marketResult) {
+        //append tables here
+        var tableRow = "<tr>";
+        tableRow += "<td>" + marketResult.marketName + "</td>";
+        tableRow += "<td>" + "Coming soon!" + "</td>";
+        // tableRow += '<td>' + '<button class="rating" id="' + marketResult.info + '">Rate</button></td>';
+        tableRow += '<td>' + '<button class="moreInfo" id="' + marketResult.info + '">More Info</button></td>';
+        tableRow += "</tr>";
+        $("tbody").append(tableRow);
+    })
+});
+
 
 $(document).ready(function () {
     $("#add-btn").on("click", function (event) {
