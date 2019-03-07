@@ -5,7 +5,7 @@ module.exports = function (sequelize, DataTypes) {
   var Farmersmarket = sequelize.define("Farmersmarket", {
     // the routeName gets saved as a string
     info: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true
     },
