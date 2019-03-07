@@ -29,7 +29,7 @@ $(document).ready(function () {
                 var tableRow = "<tr>";
                 tableRow += "<td>" + marketResult.marketname + "</td>";
                 tableRow += "<td>" + zip + "</td>";
-                tableRow += '<td>' + '<button class="rating" marketName="'+ marketResult.marketname +'  id="' + marketResult.id + '">Rate</button></td>';
+                tableRow += '<td>' + '<button class="rating" marketName="' + marketResult.marketname + '  id="' + marketResult.id + '">Rate</button></td>';
                 tableRow += '<td>' + '<button class="moreInfo" id="' + marketResult.id + '">More Info</button></td>';
                 tableRow += "</tr>";
                 $("tbody").append(tableRow);
@@ -56,30 +56,20 @@ $(document).ready(function () {
                 }).then(function (res) {
                     console.log(res)
                     detailResultsHandler(res);
-                }),
-                    //iterate through the JSON result object.
-                    async function detailResultHandler(farmersmarket) {
-                        var results = farmersmarket.results;
-                        console.log(results);
-                        results.forEach(function (resultsDetail) {
-                            var detailRow = "<tr>";
-                            
-                            detailRow += "<td>" + resultsDetail.Address + "</td>";
-                            detailRow += "<td>" + resultsDetail.GoogleLink + "</td>";
-                            detailRow += "<td>" + resultsDetail.Schedule + "</td>";
-                            detailRow += "<td>" + resultsDetail.Products + "</td>";
-                            detailRow += "</tr>";
-                            $("#details-here").append(detailRow);
-                            //TO-DO: Natalie, get the information returned from the second API call to "populate" into a 
-                            //modal and display for the user
-
-                            console.log(results.googlelink);
-                            console.log(results.address);
-                            console.log(results.schedule);
-                            console.log(results.products);
-
-                        })
-                    }
+                })
+                //iterate through the JSON result object.
+                function detailResultsHandler(farmersmarket) {
+                    console.log(farmersmarket.marketdetails)
+                    var results = farmersmarket.marketdetails
+                    var detailRow = "<tr>";
+                    detailRow += "<td>" + results.Address + "</td>";
+                    detailRow += "<td>" + results.GoogleLink + "</td>";
+                    detailRow += "<td>" + results.Schedule + "</td>";
+                    detailRow += "<td>" + results.Products + "</td>";
+                    detailRow += "</tr>";
+                    $("#details-here").append(detailRow);
+                    $(".modal").modal("show");
+                }
             }
         })
     });
