@@ -7,13 +7,14 @@
 }
 
 body {
+    
     background: url("../img/image.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 200vh;
-    width: 100vw;
+    /* height: 200vh;
+    width: 100vw; */
 }
 
 .card-header {
