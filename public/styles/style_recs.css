@@ -7,7 +7,7 @@
 }
 
 body {
-    background: url("../img/image.jpg") no-repeat center center fixed;
+    background: url("../img/produce.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -68,7 +68,7 @@ h3 {
 
 #search-btn {
     font-family: 'Rye', cursive;
-    background-color: rgb(101, 190, 101);
+    background-color:peachpuff;
     color: black;
     font-weight: bold;
     font-size: 20px;
@@ -76,7 +76,7 @@ h3 {
 
 #add-btn {
     font-family: 'Rye', cursive;
-    background-color: rgb(101, 190, 101);
+    background-color: peachpuff;
     color: black;
     font-weight: bold;
     font-size: 20px;
