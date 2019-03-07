@@ -45,6 +45,7 @@ $(document).ready(function () {
             var marketdetails = e.target.id;
             getDetails(marketdetails);
 
+
             function getDetails(marketdetails) {
                 $.ajax({
                     type: "GET",
@@ -67,10 +68,17 @@ $(document).ready(function () {
                     detailRow += "<td>" + results.Products + "</td>";
                     detailRow += "<td>" + results.Schedule + "</td>";
                     detailRow += "</tr>";
+
+                    $("#details-here").empty();
+
                     $("#details-here").append(detailRow);
                     $(".modal").modal("show");
+
+
                 }
             }
+
+
         })
     });
     $(document).on("click", ".rating", function (e) {
