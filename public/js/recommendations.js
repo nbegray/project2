@@ -2,6 +2,7 @@
 //document .on load fires when the page is rendered
 $(document).ready(function () {
     console.log("listening")
+    var zip = $("#zipcode-input").val().trim();
     $.ajax({
         method: "GET",
         url: "/api/recommendations",
@@ -14,7 +15,7 @@ $(document).ready(function () {
             //append tables here
             var tableRow = "<tr>";
             tableRow += "<td>" + marketResult.marketName + "</td>";
-            tableRow += "<td>" + "zip" + "</td>";
+            tableRow += "<td>" + zip + "</td>";
             // tableRow += '<td>' + '<button class="rating" id="' + marketResult.info + '">Rate</button></td>';
             tableRow += '<td>' + '<button class="moreInfo" id="' + marketResult.info + '">More Info</button></td>';
             tableRow += "</tr>";
