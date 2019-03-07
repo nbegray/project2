@@ -15,11 +15,7 @@ $(document).ready(function () {
                 dataType: 'jsonp',
                 jsonpCallback: 'searchResultshandler',
             }).then(function (res) {
-<<<<<<< HEAD
-                // debugger
-=======
-              
->>>>>>> 65ff918961de8f0457659f2bb797bd3f7187e851
+
                 searchResultsHandler(res);
             })
         }
@@ -28,13 +24,7 @@ $(document).ready(function () {
             console.log(farmersMarketdata.results)
             var results = farmersMarketdata.results;
             results.forEach(function (marketResult) {
-<<<<<<< HEAD
-                console.log(marketResult.marketName)
-                // debugger;
-=======
-                console.log(marketResult.marketname)
-                
->>>>>>> 65ff918961de8f0457659f2bb797bd3f7187e851
+
                 //append tables here
                 var tableRow = "<tr>";
                 tableRow += "<td>" + marketResult.marketname + "</td>";
@@ -116,17 +106,5 @@ $(document).ready(function () {
         })
     })
 })
-<<<<<<< HEAD
-                //TO-DO: ABEL- write the 'ajax' POST call to "api/recommended" right here
-=======
 
-
-
-            // $(document).on("click", ".rating", function (e) {
-
-            //     //TO-DO: ABEL- write the 'ajax' POST call to "api/recommended" right here
->>>>>>> 65ff918961de8f0457659f2bb797bd3f7187e851
-
-            //     //hint: use e.target to get info about which button was pressed.
-            //     //start with console.log(e.target)
 
