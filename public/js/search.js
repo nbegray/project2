@@ -19,7 +19,7 @@ $(document).ready(function () {
                 searchResultsHandler(res);
             })
         }
-        async function searchResultsHandler(farmersMarketdata) {
+        function searchResultsHandler(farmersMarketdata) {
             console.log("helloooooooooo")
             console.log(farmersMarketdata.results)
             var results = farmersMarketdata.results;
@@ -29,7 +29,7 @@ $(document).ready(function () {
                 var tableRow = "<tr>";
                 tableRow += "<td>" + marketResult.marketname + "</td>";
                 tableRow += "<td>" + zip + "</td>";
-                tableRow += '<td>' + '<button class="rating" marketName="' + marketResult.marketname + '  id="' + marketResult.id + '">Rate</button></td>';
+                tableRow += '<td>' + '<button class="rating" marketName="' + marketResult.marketname + '" id="' + marketResult.id + '">Rate</button></td>';
                 tableRow += '<td>' + '<button class="moreInfo" id="' + marketResult.id + '">More Info</button></td>';
                 tableRow += "</tr>";
                 $("#append-here").append(tableRow);
@@ -44,6 +44,7 @@ $(document).ready(function () {
             console.log("working")
             var marketdetails = e.target.id;
             getDetails(marketdetails);
+
 
             function getDetails(marketdetails) {
                 $.ajax({
@@ -67,18 +68,26 @@ $(document).ready(function () {
                     detailRow += "<td>" + results.Products + "</td>";
                     detailRow += "<td>" + results.Schedule + "</td>";
                     detailRow += "</tr>";
+
+                    $("#details-here").empty();
+
                     $("#details-here").append(detailRow);
                     $(".modal").modal("show");
+
+
                 }
             }
+
+
         })
     });
     $(document).on("click", ".rating", function (e) {
         console.log("hey click handler")
-        console.log(e.target)
-        // var recInfo = $(this).attr("id");
-        // var recName = $(this).attr("marketName");
-        // var recId = $(this).attr("id");
+        console.log(e)
+
+        var recInfo = e.target.id;
+        var recName = e.target.parentElement.parentElement.children[0].childNodes[0].data;
+        console.log(recName)
         $.ajax({
             type: "POST",
             url: "api/recommendations",

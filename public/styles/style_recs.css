@@ -3,11 +3,11 @@
     font-size: 100px;
     /* background-color: #8a8a8a70; */
     color: red;
-    text-shadow: 2px 2px black;
+    text-shadow: 4px 4px black;
 }
 
 body {
-    background: url("../img/image.jpg") no-repeat center center fixed;
+    background: url("../img/produce.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -68,7 +68,7 @@ h3 {
 
 #search-btn {
     font-family: 'Rye', cursive;
-    background-color: rgb(101, 190, 101);
+    background-color:red;
     color: black;
     font-weight: bold;
     font-size: 20px;
@@ -76,7 +76,7 @@ h3 {
 
 #add-btn {
     font-family: 'Rye', cursive;
-    background-color: rgb(101, 190, 101);
+    background-color: red;
     color: black;
     font-weight: bold;
     font-size: 20px;
@@ -124,17 +124,17 @@ h3 {
 /* these a: changed the navbar text colors*/
 /* unvisited link */
 a:link {
-    color: rgb(101, 190, 101);
+    color: red;
   }
   
   /* visited link */
   a:visited {
-    color: rgb(101, 190, 101);
+    color: red;
   }
   
   /* mouse over link */
   a:hover {
-    color: red;
+    color: rgb(101, 190, 101);
   }
   
   /* selected link */
