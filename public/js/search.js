@@ -63,9 +63,9 @@ $(document).ready(function () {
                     var results = farmersmarket.marketdetails
                     var detailRow = "<tr>";
                     detailRow += "<td>" + results.Address + "</td>";
-                    detailRow += "<td>" + results.GoogleLink + "</td>";
-                    detailRow += "<td>" + results.Schedule + "</td>";
+                    detailRow += "<td><a href='" + results.GoogleLink + "'>Google</a></td>";
                     detailRow += "<td>" + results.Products + "</td>";
+                    detailRow += "<td>" + results.Schedule + "</td>";
                     detailRow += "</tr>";
                     $("#details-here").append(detailRow);
                     $(".modal").modal("show");
