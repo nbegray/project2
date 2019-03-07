@@ -15,11 +15,7 @@ $(document).ready(function () {
                 dataType: 'jsonp',
                 jsonpCallback: 'searchResultshandler',
             }).then(function (res) {
-<<<<<<< HEAD
-              
-=======
-                // debugger
->>>>>>> cecf4754b63eca8732e610b7c73e91306914a8b4
+
                 searchResultsHandler(res);
             })
         }
@@ -28,18 +24,12 @@ $(document).ready(function () {
             console.log(farmersMarketdata.results)
             var results = farmersMarketdata.results;
             results.forEach(function (marketResult) {
-<<<<<<< HEAD
-                console.log(marketResult.marketname)
-                
-=======
-                console.log(marketResult.marketName)
-                // debugger;
->>>>>>> cecf4754b63eca8732e610b7c73e91306914a8b4
+
                 //append tables here
                 var tableRow = "<tr>";
                 tableRow += "<td>" + marketResult.marketname + "</td>";
                 tableRow += "<td>" + zip + "</td>";
-                tableRow += '<td>' + '<button class="rating" marketName="'+ marketResult.marketname +'  id="' + marketResult.id + '">Rate</button></td>';
+                tableRow += '<td>' + '<button class="rating" marketName="' + marketResult.marketname + '  id="' + marketResult.id + '">Rate</button></td>';
                 tableRow += '<td>' + '<button class="moreInfo" id="' + marketResult.id + '">More Info</button></td>';
                 tableRow += "</tr>";
                 $("tbody").append(tableRow);
@@ -66,30 +56,20 @@ $(document).ready(function () {
                 }).then(function (res) {
                     console.log(res)
                     detailResultsHandler(res);
-                }),
-                    //iterate through the JSON result object.
-                    async function detailResultHandler(farmersmarket) {
-                        var results = farmersmarket.results;
-                        console.log(results);
-                        results.forEach(function (resultsDetail) {
-                            var detailRow = "<tr>";
-                            
-                            detailRow += "<td>" + resultsDetail.Address + "</td>";
-                            detailRow += "<td>" + resultsDetail.GoogleLink + "</td>";
-                            detailRow += "<td>" + resultsDetail.Schedule + "</td>";
-                            detailRow += "<td>" + resultsDetail.Products + "</td>";
-                            detailRow += "</tr>";
-                            $("#details-here").append(detailRow);
-                            //TO-DO: Natalie, get the information returned from the second API call to "populate" into a 
-                            //modal and display for the user
-
-                            console.log(results.googlelink);
-                            console.log(results.address);
-                            console.log(results.schedule);
-                            console.log(results.products);
-
-                        })
-                    }
+                })
+                //iterate through the JSON result object.
+                function detailResultsHandler(farmersmarket) {
+                    console.log(farmersmarket.marketdetails)
+                    var results = farmersmarket.marketdetails
+                    var detailRow = "<tr>";
+                    detailRow += "<td>" + results.Address + "</td>";
+                    detailRow += "<td>" + results.GoogleLink + "</td>";
+                    detailRow += "<td>" + results.Schedule + "</td>";
+                    detailRow += "<td>" + results.Products + "</td>";
+                    detailRow += "</tr>";
+                    $("#details-here").append(detailRow);
+                    $(".modal").modal("show");
+                }
             }
         })
     });
@@ -116,17 +96,3 @@ $(document).ready(function () {
         })
     })
 })
-<<<<<<< HEAD
-
-
-
-            // $(document).on("click", ".rating", function (e) {
-
-            //     //TO-DO: ABEL- write the 'ajax' POST call to "api/recommended" right here
-=======
-                //TO-DO: ABEL- write the 'ajax' POST call to "api/recommended" right here
->>>>>>> cecf4754b63eca8732e610b7c73e91306914a8b4
-
-            //     //hint: use e.target to get info about which button was pressed.
-            //     //start with console.log(e.target)
-
