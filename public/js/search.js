@@ -32,7 +32,7 @@ $(document).ready(function () {
                 tableRow += '<td>' + '<button class="rating" marketName="' + marketResult.marketname + '  id="' + marketResult.id + '">Rate</button></td>';
                 tableRow += '<td>' + '<button class="moreInfo" id="' + marketResult.id + '">More Info</button></td>';
                 tableRow += "</tr>";
-                $("tbody").append(tableRow);
+                $("#append-here").append(tableRow);
 
             })
 
