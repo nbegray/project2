@@ -87,7 +87,8 @@ $(document).ready(function () {
 
         var recInfo = $(this).attr("id");
         var recName = $(this).attr("marketName");
-        var recId = $(this).attr("id");
+        var recfmId = $(this).attr("fmid");
+        
 
         $.ajax({
             type: "POST",
@@ -95,9 +96,9 @@ $(document).ready(function () {
             data: {
                 info: recInfo,
                 marketName: recName,
-                city: null,
-                state: null,
-                website: null,
+                // city: null,
+                // state: null,
+                // website: null,
             }
         }).then(function (res) {
             console.log(res)
