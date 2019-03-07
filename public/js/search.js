@@ -96,7 +96,7 @@ $(document).ready(function () {
                 marketName: recName,
             }
         }).then(function (res) {
-            console.log(res)
+            alert("Thank you for recommending this farmers market.");
         })
     })
 })
